@@ -1,0 +1,19 @@
+.ava {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background: lightslategray;
+	vertical-align: text-top;
+}
+
+.ava,
+.text {
+	margin: 0 1rem;
+	display: inline-block;
+}
+
+.textarea {
+	resize: none;
+	outline: none;
+	border: none;
+}
