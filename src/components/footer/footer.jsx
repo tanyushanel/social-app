@@ -4,7 +4,9 @@ import styles from './footer.module.scss';
 
 const Footer = () => {
     return (
-        <div></div>
+        <div className="footer">
+            <span>Copyright 2021</span>
+        </div>
     )
 }
 

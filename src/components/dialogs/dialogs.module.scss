@@ -1,0 +1,24 @@
+.dialog {
+	height: 100%;
+	display: grid;
+	grid-template-areas: "c m m";
+	grid-template-rows: 2fr auto;
+}
+
+.messages {
+	padding: 1rem;
+	grid-area: m;
+	background: lightgray;
+}
+
+.contacts {
+	padding: 1rem;
+	grid-area: c;
+	background: lightcyan;
+}
+
+textarea {
+	resize: none;
+	outline: none;
+	border: none;
+}
