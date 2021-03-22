@@ -5,7 +5,7 @@ import styles from "./nav.module.scss";
 const Nav = () => {
 	return (
 		<nav className='nav'>
-			<NavLink to='/profile' className={styles.navItem}>
+			<NavLink to='/profile' className={`${styles.navItem} ${styles.active}`}>
 				Profile
 			</NavLink>
 			<NavLink to='/dialogs' className={styles.navItem}>

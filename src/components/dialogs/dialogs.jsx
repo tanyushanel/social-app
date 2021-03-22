@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./dialogs.module.scss";
+import Post from "../posts/post/post";
 
 const Dialogs = () => {
 	return (
@@ -10,7 +11,12 @@ const Dialogs = () => {
 				<li className='contact'>Vanya</li>
 				<li className='contact'>Banya</li>
 			</ul>
-			<div className={styles.messages}></div>
+			<ul className={styles.messages}>
+				<Post message='Aaaaaaaaaaaaaaaaaa' />
+				<Post message='Bbbbbbbbbbbbbbbbbbb'/>
+
+
+			</ul>
 		</div>
 	);
 };
