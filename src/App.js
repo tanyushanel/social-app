@@ -1,10 +1,10 @@
 
 import './App.css';
-import Header from "./components/header/header";
-import Nav from "./components/nav/nav";
-import Footer from "./components/footer/footer";
-import Profile from './components/profile/profile';
-import Dialogs from './components/dialogs/dialogs';
+import Header from "./components/structure/header/header";
+import Nav from "./components/structure/nav/nav";
+import Footer from "./components/structure/footer/footer";
+import Profile from './components/pages/profile/profile';
+import Dialogs from './components/pages/dialogs/dialogs';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
