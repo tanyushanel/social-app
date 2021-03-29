@@ -4,12 +4,12 @@ import ProfileInfo from "../../profile/profileInfo/profileInfo";
 
 const Message = (props) => {
     return (
-    <div className={styles.messages}>
-        <ProfileInfo/>
-        <article className={styles.message}>{ props.message }</article>
-    </div>
+        <div className={ `${styles.message} ${styles.messageAuthor} `}>
+            <ProfileInfo/>
+            <p >{ props.message }</p>
+        </div>
 
-)
+    )
 }
 
 export default Message;

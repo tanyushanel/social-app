@@ -1,8 +1,21 @@
-.messages  {
-  display: flex;
-  justify-content: flex-start;
-}
-
 .message {
+  display: flex;
+  align-items: center;
 
+  & p {
+    background: azure;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  &.messageAuthor {
+    flex-direction: row-reverse;
+
+    & p {
+      background: lavender;
+    }
+  }
 }
+
+
+
