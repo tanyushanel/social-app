@@ -4,9 +4,9 @@ import ProfileInfo from "../../profile/profileInfo/profileInfo";
 
 const Message = (props) => {
     return (
-        <div className={ `${styles.message} ${styles.messageAuthor} `}>
+        <div className={ `${ styles.message } ${ styles.messageAuthor } ` }>
             <ProfileInfo/>
-            <p >{ props.message }</p>
+            <p className={ styles.text }>{ props.message }</p>
         </div>
 
     )

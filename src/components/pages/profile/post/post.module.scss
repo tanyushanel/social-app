@@ -1,13 +1,28 @@
 .icons {
-  color: #393939;
+
 }
 
-.myPost {
+.post {
   display: flex;
-  width: 80%;
-  justify-content: flex-start ;
-  align-items: center;
+  align-items: start;
+  margin: 0.25rem 0;
+
+
+  & .text {
+    display: flex;
+    justify-content: space-between;
+    flex: 90%;
+    background: azure;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+
+    & .txtRating {
+      color: darkgrey;
+      font-size: 0.8em;
+      white-space: nowrap;
+
+    }
+  }
+
 }
 
-.rating  {
-}

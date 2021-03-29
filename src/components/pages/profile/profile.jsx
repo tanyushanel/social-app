@@ -7,18 +7,32 @@ import Post from "./post/post";
 const Profile = (props) => {
 
     let postsElements = props.posts
-        .map((post, i) => <Post className={ styles.postItem } id={ post.id } text={ post.text }
-                                likesCount={ post.likesCount } dislikesCount={ post.dislikesCount }
-                                key={ i }/>)
+        .map((post, i) => <Post
+            id={ post.id }
+            text={ post.text }
+            likesCount={ post.likesCount }
+            dislikesCount={ post.dislikesCount }
+            key={ i }/>);
+
+    let newPostElem = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElem.current.value;
+        alert(text);
+    }
+
     return (
         <div>
-            <article className={ styles.addPost }>
+            <div className={ styles.addPost }>
                 <ProfileInfo/>
-                <form>
-                    <textarea className={ styles.textarea } placeholder='Write a message...'></textarea>
-                    <button> Add</button>
+                <form className={ styles.addPostForm }>
+                    <textarea className={ styles.textarea }
+                              ref={ newPostElem }
+                              placeholder='Write a message...'
+                    ></textarea>
+                    <button onClick={ addPost }> Add</button>
                 </form>
-            </article>
+            </div>
 
             <div className={ styles.posts }> { postsElements }</div>
 

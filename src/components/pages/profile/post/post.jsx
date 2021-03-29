@@ -7,14 +7,18 @@ import ProfileInfo from "../profileInfo/profileInfo";
 const Post = (props) => {
 
     return (
-        <article className={ styles.myPost }>
+        <div className={ styles.post }>
+
             <ProfileInfo/>
-            <p> { props.text } </p>
-            <div className={ styles.rating }>
-                <BiLike className={ styles.icons }/> <span> { props.likesCount } </span>
-                <BiDislike className={ styles.icons }/> <span> { props.dislikesCount } </span>
+            <div className={ styles.text }>
+                <div>{ props.text }</div>
+                <div className={ styles.txtRating }>
+                    <div><BiLike className={ styles.icons }/> <span> { props.likesCount } </span></div>
+                    <div><BiDislike className={ styles.icons }/> <span> { props.dislikesCount } </span></div>
+                </div>
             </div>
-        </article>
+
+        </div>
     )
 }
 
