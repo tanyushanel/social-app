@@ -19,7 +19,8 @@ function App(props) {
                 {/*<Route path="/dialogs" component={Dialogs} />*/ }
 
                 <Route path="/profile"
-                       render={ () => <Profile posts={ props.appState.profilePage.posts }/> }/>
+                       render={ () => <Profile posts={ props.appState.profilePage.posts }
+                                               addPost={ props.addPost }/> }/>
                 <Route path="/dialogs"
                        render={ () => <Dialogs dialogs={ props.appState.messagesPage.dialogs }
                                                messages={ props.appState.messagesPage.messages }/> }/>
