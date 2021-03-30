@@ -16,10 +16,13 @@ const Profile = (props) => {
 
     let newPostElem = React.createRef();
 
-    let onAddPost = () => {
-        debugger;
+    let onAddPost = (e) => {
+
+        e.preventDefault();
+
         let text = newPostElem.current.value;
         props.addPost(text);
+        newPostElem.current.value = '';
     }
 
     return (
@@ -32,7 +35,7 @@ const Profile = (props) => {
                               ref={ newPostElem }
                               placeholder='Write a message...'
                     ></textarea>
-                    <button onClick={ onAddPost }> Add</button>
+                    <button  onClick={ onAddPost }> Add</button>
                 </form>
             </div>
 

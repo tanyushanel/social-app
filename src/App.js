@@ -5,7 +5,7 @@ import Footer from "./components/structure/footer/footer";
 import Profile from './components/pages/profile/profile';
 import Dialogs from './components/pages/dialogs/dialogs';
 import { Route } from 'react-router-dom';
-import Friend from "./components/pages/friends/friend/friend";
+
 import Friends from "./components/pages/friends/friends";
 
 function App(props) {
@@ -15,8 +15,7 @@ function App(props) {
             <Header/>
             <Nav/>
             <div className="content">
-                {/*<Route path="/profile" component={Profile}  />*/ }
-                {/*<Route path="/dialogs" component={Dialogs} />*/ }
+
 
                 <Route path="/profile"
                        render={ () => <Profile posts={ props.appState.profilePage.posts }
