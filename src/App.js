@@ -6,30 +6,26 @@ import Profile from './components/pages/profile/profile';
 import Dialogs from './components/pages/dialogs/dialogs';
 import { Route } from 'react-router-dom';
 
-import Friends from "./components/pages/friends/friends";
+
 
 function App(props) {
     return (
-
         <div className="app-wrapper">
             <Header/>
             <Nav/>
             <div className="content">
-
-
                 <Route path="/profile"
-                       render={ () => <Profile posts={ props.appState.profilePage.posts }
-                                               addPost={ props.addPost }/> }/>
+                       render={ () => <Profile profilePage={ props.appState.profilePage }
+                                                                      addPost={ props.addPost }
+                                               updateNewPostText={ props.updateNewPostText }
+                                               newPostText={ props.appState.profilePage.newPostText }/> }/>
                 <Route path="/dialogs"
-                       render={ () => <Dialogs dialogs={ props.appState.messagesPage.dialogs }
-                                               messages={ props.appState.messagesPage.messages }/> }/>
-                <Route path="/friends"
-                       render={ () => <Friends friends={ props.appState.friendsPage.friends }/> }/>
+                       render={ () => <Dialogs dialogsPage={ props.appState.dialogsPage }/> }/>
+                {/*<Route path="/friends"*/ }
+                {/*       render={ () => <Friends friends={ props.appState.friendsPage.friends }/> }/>*/ }
             </div>
             <Footer/>
         </div>
-
-
     );
 }
 

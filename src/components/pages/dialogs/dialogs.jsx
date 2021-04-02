@@ -2,25 +2,20 @@ import React from "react";
 import styles from "./dialogs.module.scss";
 import Dialog from "./dialog/dialog";
 import Message from "./message/message";
-import AddPost from "../../addPost/addPost";
+
 
 
 const Dialogs = (props) => {
     let dialogsElements =
-        props.dialogs.map((dialog, i) => <Dialog name={ dialog.name }
+        props.dialogsPage.dialogs.map((dialog, i) => <Dialog name={ dialog.name }
                                                  id={ dialog.id }
                                                  key={ i }/>);
 
     let messagesElements =
-        props.messages.map((message, i) => <Message message={ message.text }
-                                                    key={ i }/>)
+        props.dialogsPage.messages.map((message, i) => <Message message={ message.text }
+                                                    key={ i }/>);
 
-    let newMessageElem = React.createRef();
 
-    let addMessage = () => {
-        let txtMessage = newMessageElem.current.value;
-        alert(txtMessage);
-    }
 
     return (
         <div className={ styles.dialogs }>
@@ -31,13 +26,7 @@ const Dialogs = (props) => {
                 { messagesElements }
             </ul>
 
-            <form className={ styles.addMessageForm }>
-                    <textarea className={ styles.textarea }
-                              ref={ newMessageElem }
-                              placeholder='Write a message...'
-                    ></textarea>
-                <button onClick={ addMessage }> Add</button>
-            </form>
+
         </div>
     );
 };
