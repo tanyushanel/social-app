@@ -73,9 +73,22 @@ const store = {
             this._callSubscriber(this._state);
         }
 
-            }
+    },
 };
 
 export default store;
+
+export const addPostActionCreator = () => {
+    return {
+        type: "ADD_POST"
+    };
+};
+
+export const updateNewTextPostActionCreator = (txt) => {
+    return {
+        type: "UPDATE_NEW_TEXT_POST",
+        newTxt: txt
+    };
+};
 
 window.store = store;
