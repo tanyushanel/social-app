@@ -1,18 +1,18 @@
 import ProfileInfo from "../profileInfo/profileInfo";
 import React from "react";
-import styles from './addPost.module.scss'
+import styles from './addPost.module.scss';
 
 const AddPost = (props) => {
     let newPostElem = React.createRef();
-    let onAddPost = (e) => {
+
+    const onAddPost = (e) => {
         e.preventDefault();
+        props.dispatch({ type: "ADD_POST" });
+    };
+    const onNewPostChange = () => {
         let txt = newPostElem.current.value;
-        props.addPost(txt);
-    }
-    let onNewPostChange = () => {
-        let txt = newPostElem.current.value;
-        props.updateNewPostText(txt);
-    }
+        props.dispatch({ type: "UPDATE_NEW_TEXT_POST", newTxt: txt });
+    };
     return (
         <div className={ styles.addPost }>
             <ProfileInfo/>
@@ -26,7 +26,7 @@ const AddPost = (props) => {
 
             </form>
         </div>
-    )
-}
+    );
+};
 
 export default AddPost;

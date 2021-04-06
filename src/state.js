@@ -48,30 +48,32 @@ const store = {
         return this._state;
     },
 
-    addPost() {
-        let newPost = {
-            id: 4,
-            text: this._state.profilePage.newPostText,
-            likesCount: 0,
-            dislikesCount: 0,
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._callSubscriber(this._state);
-        this._state.profilePage.newPostText = '';
-    },
-
-    updateNewPostText(newTxt) {
-        this._state.profilePage.newPostText = newTxt;
-        this._callSubscriber(this._state);
-    },
-
     subscribe(observer) {
         this._callSubscriber = observer;
     },
 
     _callSubscriber() {
         console.log('State changed');
-    }
+    },
+
+    dispatch(action) {
+        if ( action.type === "ADD_POST" ) {
+            let newPost = {
+                id: 4,
+                text: this._state.profilePage.newPostText,
+                likesCount: 0,
+                dislikesCount: 0,
+            };
+            this._state.profilePage.posts.push(newPost);
+            this._callSubscriber(this._state);
+            this._state.profilePage.newPostText = '';
+        }
+        else if ( action.type === "UPDATE_NEW_TEXT_POST" ) {
+            this._state.profilePage.newPostText = action.newTxt;
+            this._callSubscriber(this._state);
+        }
+
+            }
 };
 
 export default store;
