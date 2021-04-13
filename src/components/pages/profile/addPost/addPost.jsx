@@ -4,30 +4,25 @@ import styles from './addPost.module.scss';
 import { addPostActionCreator, updateNewTextPostActionCreator } from "../../../../state";
 
 const AddPost = (props) => {
-    let newPostElem = React.createRef();
-
+    let newPostText = props.newPostText;
     const onAddPost = (e) => {
         e.preventDefault();
-        //props.addPost();
-        //let action = { type: "ADD_POST" };
         let action = addPostActionCreator();
         props.dispatch(action);
     };
-    const onNewPostChange = () => {
-        let txt = newPostElem.current.value;
-        //props.updateNewsPostText(txt);
-        //let action = { type: "UPDATE_NEW_TEXT_POST", newTxt: txt };
+    const onNewPostChange = (e) => {
+        let txt = e.target.value;
         let action = updateNewTextPostActionCreator(txt);
         props.dispatch(action);
     };
+
     return (
         <div className={ styles.addPost }>
             <ProfileInfo/>
             <form className={ styles.addPostForm }>
                     <textarea className={ styles.textarea }
                               onChange={ onNewPostChange }
-                              value={ props.newPostText }
-                              ref={ newPostElem }
+                              value={ newPostText }
                               placeholder='Write a message...'/>
                 <button onClick={ onAddPost }> Add</button>
 

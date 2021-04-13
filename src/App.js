@@ -17,7 +17,8 @@ function App(props) {
                        render={ () => <Profile profilePage={ props.appState.profilePage }
                                                dispatch={ props.dispatch }/> }/>
                 <Route path="/dialogs"
-                       render={ () => <Dialogs dialogsPage={ props.appState.dialogsPage }/> }/>
+                       render={ () => <Dialogs dialogsPage={ props.appState.dialogsPage }
+                                               dispatch={ props.dispatch }/> }/>
                 {/*<Route path="/friends"*/ }
                 {/*       render={ () => <Friends friends={ props.appState.friendsPage.friends }/> }/>*/ }
             </div>

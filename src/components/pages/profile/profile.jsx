@@ -8,11 +8,11 @@ const Profile = (props) => {
     return (
         <div>
             <AddPost dispatch={ props.dispatch }
-                     newPostText={ props.newPostText }
+                     newPostText={ props.profilePage.newPostText }
             />
 
             <MyPosts posts={ props.profilePage.posts }
-                     newPostText={ props.newPostText }
+                     newPostText={ props.profilePage.newPostText }
                      dispatch={ props.dispatch }/>
         </div>
     );
