@@ -2,19 +2,19 @@ import React from "react";
 import styles from "./dialogs.module.scss";
 import Dialog from "./dialog/dialog";
 import Message from "./message/message";
-import { sendMessageActionCreator, updateNewMessageBodyActionCreator } from "../../../state";
+import { sendMessageActionCreator, updateNewMessageBodyActionCreator } from "../../../redux/reducers/dialogsPageReducer";
 
 const Dialogs = (props) => {
     const dialogsElements =
-        props.dialogsPage.dialogs.map((dialog, i) => <Dialog name={ dialog.name }
+        props.state.dialogs.map((dialog, i) => <Dialog name={ dialog.name }
                                                              id={ dialog.id }
                                                              key={ i }/>);
 
     const messagesElements =
-        props.dialogsPage.messages.map((message, i) => <Message message={ message.message }
+        props.state.messages.map((message, i) => <Message message={ message.message }
                                                                 key={ i }/>);
 
-    let newMessageBody = props.dialogsPage.newMessageBody;
+    let newMessageBody = props.state.newMessageBody;
 
     const onSendMessageClick = (e) => {
         e.preventDefault();

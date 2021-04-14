@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import store from "./state";
+import store from "./redux/store";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
@@ -10,7 +10,7 @@ export const rerenderTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App appState={ store.getState() }
+                <App appState={ state }
                      dispatch={ store.dispatch.bind(store) }
                 />
             </BrowserRouter>

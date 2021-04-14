@@ -1,7 +1,7 @@
 import ProfileInfo from "../profileInfo/profileInfo";
 import React from "react";
 import styles from './addPost.module.scss';
-import { addPostActionCreator, updateNewTextPostActionCreator } from "../../../../state";
+import { addPostActionCreator, updateNewTextPostActionCreator } from "../../../../redux/reducers/profilePageReducer";
 
 const AddPost = (props) => {
     let newPostText = props.newPostText;

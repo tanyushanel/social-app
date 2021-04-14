@@ -14,10 +14,10 @@ function App(props) {
             <Nav/>
             <div className="content">
                 <Route path="/profile"
-                       render={ () => <Profile profilePage={ props.appState.profilePage }
+                       render={ () => <Profile state={ props.appState.profilePage }
                                                dispatch={ props.dispatch }/> }/>
                 <Route path="/dialogs"
-                       render={ () => <Dialogs dialogsPage={ props.appState.dialogsPage }
+                       render={ () => <Dialogs state={ props.appState.dialogsPage }
                                                dispatch={ props.dispatch }/> }/>
                 {/*<Route path="/friends"*/ }
                 {/*       render={ () => <Friends friends={ props.appState.friendsPage.friends }/> }/>*/ }
